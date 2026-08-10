@@ -363,8 +363,8 @@ export default function GiveNowClient() {
         {/* Contact */}
         <p className="text-center text-gray-500 dark-muted text-sm font-inter pb-2">
           For any giving-related queries, contact us at{' '}
-          <a href="mailto:jcwmm@gmail.com" className="text-royal-600 dark-accent hover:underline font-medium">
-            jcwmm@gmail.com
+          <a href="mailto:jcwmm.off@gmail.com" className="text-royal-600 dark-accent hover:underline font-medium">
+            jcwmm.off@gmail.com
           </a>
         </p>
       </div>

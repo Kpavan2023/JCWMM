@@ -13,7 +13,7 @@ export const CHURCH_INFO = {
   contact: {
     phone1: '+91 9700545494',
     phone2: '+91 8686861836',
-    email: 'jcwmm@gmail.com',
+    email: 'jcwmm.off@gmail.com',
     whatsapp: '+919700545494',
   },
   social: {
@@ -295,7 +295,7 @@ export const GALLERY_IMAGES = [
   },
   {
     id: 12,
-    src: '/church_gallery/church-10.JPG',
+    src: '/church_gallery/Church-10.JPG',
     category: 'Prayer Meetings',
     caption: 'All-Night Prayer Service',
   },
@@ -333,7 +333,7 @@ export const GALLERY_IMAGES = [
   },
   {
     id: 11,
-    src: '/church_gallery/church-13.JPG',
+    src: '/church_gallery/Church-13.JPG',
     category: 'Worship',
     caption: 'Evening Worship Night',
   },
