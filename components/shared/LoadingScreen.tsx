@@ -24,8 +24,8 @@ export default function LoadingScreen() {
         fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       style={{
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%)',
-      }}
+  background: 'linear-gradient(135deg, #050505 0%, #0b0b0b 50%, #181818 100%)',
+}}
     >
       <div className="flex flex-col items-center gap-6">
         <div className="relative w-24 h-24 animate-float">
