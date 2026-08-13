@@ -179,17 +179,21 @@ export default function Navbar() {
           mobileOpen ? 'max-h-screen' : 'max-h-0'
         }`}
       >
-        <div className="bg-white/98 backdrop-blur-md border-t border-royal-100 px-4 py-4 space-y-1">
+        <div className={`px-4 py-4 space-y-1 backdrop-blur-md border-t ${
+          scrolled
+            ? 'bg-white/98 border-royal-100'
+            : 'bg-black/95 border-white/10'
+        }`}>
           {NAV_LINKS.map((link) =>
             link.children ? (
               <div key={link.label}>
-                <p className="text-xs font-semibold text-royal-400 uppercase tracking-wider px-3 pt-3 pb-1">More</p>
+                <p className={`text-xs font-semibold uppercase tracking-wider px-3 pt-3 pb-1 ${scrolled ? 'text-royal-400' : 'text-gold-400'}`}>More</p>
                 {link.children.map((child) =>
                   child.href.startsWith('/') ? (
                     <Link
                       key={child.label}
                       href={child.href}
-                      className="block px-3 py-2.5 text-sm text-royal-800 hover:bg-royal-50 rounded-lg font-inter transition-colors"
+                      className={`block px-3 py-2.5 text-sm rounded-lg font-inter transition-colors ${scrolled ? 'text-royal-800 hover:bg-royal-50' : 'text-white hover:bg-white/10'}`}
                       onClick={() => setMobileOpen(false)}
                     >
                       {child.label}
@@ -198,7 +202,7 @@ export default function Navbar() {
                     <button
                       key={child.label}
                       onClick={() => handleNavClick(child.href)}
-                      className="w-full text-left px-3 py-2.5 text-sm text-royal-800 hover:bg-royal-50 rounded-lg font-inter transition-colors"
+                      className={`w-full text-left px-3 py-2.5 text-sm rounded-lg font-inter transition-colors ${scrolled ? 'text-royal-800 hover:bg-royal-50' : 'text-white hover:bg-white/10'}`}
                     >
                       {child.label}
                     </button>
@@ -209,20 +213,24 @@ export default function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="w-full text-left px-3 py-2.5 text-sm font-medium text-royal-800 hover:bg-royal-50 rounded-lg font-inter transition-colors"
+                className={`w-full text-left px-3 py-2.5 text-sm font-medium rounded-lg font-inter transition-colors ${scrolled ? 'text-royal-800 hover:bg-royal-50' : 'text-white hover:bg-white/10'}`}
               >
                 {link.label}
               </button>
             )
           )}
-          <div className="pt-3 border-t border-royal-100 space-y-2">
+          <div className={`pt-3 border-t space-y-3 ${scrolled ? 'border-royal-100' : 'border-white/10'}`}>
             <div className="flex items-center justify-between px-3">
-              <span className="text-xs font-semibold text-royal-400 uppercase tracking-wider">Theme</span>
+              <span className={`text-xs font-semibold uppercase tracking-wider ${scrolled ? 'text-royal-400' : 'text-gold-400'}`}>Theme</span>
               <ThemeToggle />
             </div>
             <Link
               href="/give-now"
-              className="block w-full text-center px-5 py-3 rounded-full bg-royal-600 text-white font-poppins font-semibold text-sm"
+              className={`block w-full text-center px-5 py-3 rounded-full font-poppins font-semibold text-sm transition-colors ${
+                scrolled
+                  ? 'bg-royal-600 text-white hover:bg-royal-500'
+                  : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
+              }`}
               onClick={() => setMobileOpen(false)}
             >
               Give Now

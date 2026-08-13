@@ -1,8 +1,10 @@
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+/* stylelint-disable-next-line at-rule-no-unknown */
 
 :root {
   --blue-50: #eff6ff;
@@ -330,47 +332,48 @@
    DARK MODE — natural, premium, adapts all pages
    ════════════════════════════════════════════ */
 html.dark {
-  --background: 222 47% 7%;
+  --background: 0 0% 0%;
   --foreground: 210 40% 96%;
-  --card: 222 40% 10%;
+  --card: 0 0% 4%;
   --card-foreground: 210 40% 96%;
-  --popover: 222 40% 10%;
+  --popover: 0 0% 4%;
   --popover-foreground: 210 40% 96%;
   --primary: 217 91% 60%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 217 33% 17%;
+  --secondary: 0 0% 7%;
   --secondary-foreground: 210 40% 96%;
-  --muted: 217 33% 15%;
+  --muted: 0 0% 7%;
   --muted-foreground: 215 20% 65%;
   --accent: 43 96% 56%;
   --accent-foreground: 222 47% 11%;
   --destructive: 0 63% 50%;
   --destructive-foreground: 0 0% 98%;
-  --border: 217 33% 20%;
-  --input: 217 33% 20%;
+  --border: 0 0% 100%;
+  --border-opacity: 0.08;
+  --input: 0 0% 7%;
   --ring: 217 91% 60%;
 }
 
 html.dark body {
-  background-color: #0a0f1c;
+  background-color: #000000;
   color: #e2e8f0;
 }
 
 /* Section gradients adapt */
 html.dark .section-gradient {
-  background: linear-gradient(180deg, #0a0f1c 0%, #0d1424 50%, #0a0f1c 100%);
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%);
 }
 
 html.dark .bg-white {
-  background-color: #0d1424 !important;
+  background-color: #0a0a0a !important;
 }
 
 html.dark .bg-gray-50 {
-  background-color: #111827 !important;
+  background-color: #111111 !important;
 }
 
 html.dark .bg-gray-100 {
-  background-color: #1a2332 !important;
+  background-color: #161616 !important;
 }
 
 /* Text colors */
@@ -403,23 +406,17 @@ html.dark .border-royal-50 {
 html.dark .border-royal-100 {
   border-color: rgba(255,255,255,0.1) !important;
 }
-html.dark .shadow-xl {
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4) !important;
-}
-html.dark .shadow-lg {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35) !important;
-}
 
 /* Navbar */
 html.dark .bg-white\/95 {
-  background-color: rgba(13, 20, 36, 0.95) !important;
+  background-color: rgba(0, 0, 0, 0.95) !important;
 }
 
 /* Inputs */
 html.dark input,
 html.dark textarea {
-  background-color: #1a2332 !important;
-  border-color: rgba(255,255,255,0.1) !important;
+  background-color: #111111 !important;
+  border-color: rgba(255,255,255,0.08) !important;
   color: #e2e8f0 !important;
 }
 html.dark input::placeholder,
@@ -429,25 +426,25 @@ html.dark textarea::placeholder {
 
 /* Accordion */
 html.dark .bg-royal-50 {
-  background-color: rgba(30, 58, 138, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
 }
 html.dark .bg-royal-100 {
-  background-color: rgba(30, 58, 138, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
 }
 
 /* Scrollbar */
 html.dark ::-webkit-scrollbar-track {
-  background: #0a0f1c;
+  background: #000000;
 }
 html.dark ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1e3a8a, #3b82f6);
+  background: linear-gradient(180deg, #2a2a2a, #3a3a3a);
 }
 
 /* ════════════════════════════════════════════
    DARK MODE — premium utility classes
    ════════════════════════════════════════════ */
 html.dark .dark-section {
-  background-color: #0d1424 !important;
+  background-color: #0a0a0a !important;
 }
 html.dark .dark-heading {
   color: #f1f5f9 !important;
@@ -465,25 +462,25 @@ html.dark .dark-muted-icon {
   color: rgba(148, 163, 184, 0.4) !important;
 }
 html.dark .dark-card {
-  background-color: #111a2e !important;
+  background-color: #111111 !important;
 }
 html.dark .dark-inner-card {
-  background-color: #0d1424 !important;
+  background-color: #0a0a0a !important;
 }
 html.dark .dark-border {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 html.dark .dark-icon-bg {
-  background-color: rgba(30, 58, 138, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 html.dark .dark-icon {
   color: #60a5fa !important;
 }
 html.dark .dark-page {
-  background: linear-gradient(180deg, #0a0f1c 0%, #0d1424 50%, #0a0f1c 100%) !important;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%) !important;
 }
 html.dark .dark-topbar {
-  background-color: #060d1f !important;
+  background-color: #000000 !important;
 }
 html.dark .dark-badge-bg {
   background-color: rgba(217, 119, 6, 0.15) !important;
@@ -494,8 +491,112 @@ html.dark .dark-badge-text {
 
 /* Prophetess couple section — image area in dark mode */
 html.dark .dark-section .from-royal-50 {
-  background-color: #111a2e !important;
+  background-color: #111111 !important;
   background-image: none !important;
+}
+
+/* ── Pure black dark mode for royal navy sections ── */
+html.dark .bg-royal-950 {
+  background-color: #000000 !important;
+}
+html.dark .bg-royal-900 {
+  background-color: #0a0a0a !important;
+}
+html.dark .bg-royal-800 {
+  background-color: #111111 !important;
+}
+html.dark .from-royal-950 {
+  --tw-gradient-from: #000000 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(0,0,0,0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .via-royal-900 {
+  --tw-gradient-stops: var(--tw-gradient-from), #0a0a0a var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+html.dark .to-royal-800 {
+  --tw-gradient-to: #111111 var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .to-royal-900 {
+  --tw-gradient-to: #0a0a0a var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .from-royal-900 {
+  --tw-gradient-from: #0a0a0a var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(10,10,10,0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .bg-royal-800\/30 {
+  background-color: rgba(17, 17, 17, 0.3) !important;
+}
+html.dark .border-royal-700\/50 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html.dark .border-royal-800 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html.dark .shadow-royal-900\/15 {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+html.dark .shadow-royal-900\/20 {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+html.dark .shadow-royal-100\/50 {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html.dark .shadow-royal-300\/30 {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+html.dark .shadow-royal-100\/60 {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html.dark .shadow-xl {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+html.dark .shadow-lg {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html.dark .shadow-2xl {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6) !important;
+}
+html.dark .card-hover:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(251, 191, 36, 0.1) !important;
+}
+
+/* Gradient opacity variants — pure black in dark mode */
+html.dark .from-royal-900\/90 {
+  --tw-gradient-from: rgba(0,0,0,0.9) var(--tw-gradient-from-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .via-royal-900\/60 {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(10,10,10,0.6) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+html.dark .from-royal-900\/50 {
+  --tw-gradient-from: rgba(0,0,0,0.5) var(--tw-gradient-from-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .from-royal-900\/40 {
+  --tw-gradient-from: rgba(0,0,0,0.4) var(--tw-gradient-from-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .from-royal-900\/70 {
+  --tw-gradient-from: rgba(0,0,0,0.7) var(--tw-gradient-from-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .bg-royal-900\/0 {
+  background-color: transparent !important;
+}
+html.dark .group-hover\:bg-royal-900\/40:hover {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+html.dark .bg-royal-700\/30 {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+html.dark .border-royal-700\/50 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html.dark .shadow-royal-900\/10 {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* ── Hero badge shimmer ── */
@@ -541,4 +642,25 @@ html.dark .dark-section .from-royal-50 {
 }
 .hero-btn-gold:hover {
   box-shadow: 0 8px 32px rgba(217, 119, 6, 0.6), 0 1px 0 rgba(255,255,255,0.15) inset;
+}
+
+/* ── Mobile animation optimization — reduce decorative animations on small screens ── */
+@media (max-width: 640px) {
+  .animate-float,
+  .animate-float-delay,
+  .hero-logo-float,
+  .hero-dove-float,
+  .animate-shimmer,
+  .badge-shimmer::before,
+  .cross-glow,
+  .animate-pulse-slow,
+  .ray {
+    animation: none !important;
+  }
+  .cross-glow {
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.2)) !important;
+  }
+  .animate-spin-slow {
+    animation: none !important;
+  }
 }

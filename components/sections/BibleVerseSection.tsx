@@ -78,18 +78,22 @@ export default function BibleVerseSection() {
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             {BIBLE_VERSES.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Go to verse ${i + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  i === current
-                    ? 'w-6 h-2.5 bg-gold-400'
-                    : 'w-2.5 h-2.5 bg-white/30 hover:bg-white/50'
-                }`}
-              />
+                className="w-6 h-6 flex items-center justify-center rounded-full transition-all duration-300"
+              >
+                <span
+                  className={`block rounded-full transition-all duration-300 ${
+                    i === current
+                      ? 'w-6 h-2.5 bg-gold-400'
+                      : 'w-2.5 h-2.5 bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+              </button>
             ))}
           </div>
 

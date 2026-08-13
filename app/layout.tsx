@@ -1,5 +1,23 @@
+// Suppress missing type declarations for global CSS import
+// TypeScript may not have a declaration for '*.css' in this project setup
+// @ts-ignore
 import './globals.css';
 import type { Metadata } from 'next';
+import { Poppins, Inter } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jcwmm.org'),
@@ -18,18 +36,18 @@ export const metadata: Metadata = {
     description:
       'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and community fellowship.',
     siteName: 'JCWMM',
-    images: [{ url: '/Logo_Jcwmm.jpeg', width: 800, height: 800, alt: 'JCWMM Logo' }],
+    images: [{ url: '/logo_Jcwmm.png', width: 800, height: 800, alt: 'JCWMM Logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
     description: 'Official website of JCWMM — Sharing God\'s Word, Transforming Lives, Walking in Faith.',
-    images: ['/Logo_Jcwmm.jpeg'],
+    images: ['/logo_Jcwmm.png'],
   },
   icons: {
-    icon: '/Logo_Jcwmm.jpeg',
-    shortcut: '/Logo_Jcwmm.jpeg',
-    apple: '/Logo_Jcwmm.jpeg',
+    icon: '/logo_Jcwmm.png',
+    shortcut: '/logo_Jcwmm.png',
+    apple: '/logo_Jcwmm.png',
   },
   other: {
     'application/ld+json': JSON.stringify({
@@ -58,19 +76,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('jcwmm-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
           }}
         />
       </head>
-      <body className="font-inter antialiased">{children}</body>
+      <body className={`${poppins.variable} ${inter.variable} font-inter antialiased`}>{children}</body>
     </html>
   );
 }

@@ -326,12 +326,6 @@ export const GALLERY_IMAGES = [
     caption: 'Church Anniversary Celebration',
   },
   {
-    id: 10,
-    src: '/church_gallery/Church-11.JPG',
-    category: 'Youth',
-    caption: 'Youth Camp',
-  },
-  {
     id: 11,
     src: '/church_gallery/Church-13.JPG',
     category: 'Worship',

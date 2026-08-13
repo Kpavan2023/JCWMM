@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import LoadingScreen from '@/components/shared/LoadingScreen';
 import ScrollProgress from '@/components/shared/ScrollProgress';
 import BackToTop from '@/components/shared/BackToTop';
@@ -11,10 +12,11 @@ import BibleVerseSection from '@/components/sections/BibleVerseSection';
 import SermonsSection from '@/components/sections/SermonsSection';
 import LiveStreamSection from '@/components/sections/LiveStreamSection';
 import EventsSection from '@/components/sections/EventsSection';
-import GallerySection from '@/components/sections/GallerySection';
-import TestimoniesSection from '@/components/sections/TestimoniesSection';
-import PrayerSection from '@/components/sections/PrayerSection';
-import ContactSection from '@/components/sections/ContactSection';
+
+const GallerySection = dynamic(() => import('@/components/sections/GallerySection'));
+const TestimoniesSection = dynamic(() => import('@/components/sections/TestimoniesSection'));
+const PrayerSection = dynamic(() => import('@/components/sections/PrayerSection'));
+const ContactSection = dynamic(() => import('@/components/sections/ContactSection'));
 
 export default function Home() {
   return (

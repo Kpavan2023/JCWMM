@@ -1,6 +1,4 @@
-'use client';
-
-import { Sun, Moon, Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Sun, Moon, Calendar, MapPin } from 'lucide-react';
 import SectionReveal from '@/components/shared/SectionReveal';
 import { CHURCH_INFO } from '@/lib/church-data';
 
@@ -60,14 +58,13 @@ export default function ServicesSection() {
               <span className="font-inter font-medium text-white">{CHURCH_INFO.address.full}</span>
             </div>
             <a
-                href={CHURCH_INFO.location.directions}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 w-full flex items-center justify-center gap-2 py-3 rounded-xl blue-gradient text-white font-poppins font-semibold text-sm hover:opacity-90 transition-all hover:scale-[1.01] shadow-lg"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Get Directions
-              </a>
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CHURCH_INFO.address.full)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-white font-poppins font-semibold text-sm transition-colors duration-200"
+            >
+              Get Directions
+            </a>
           </div>
         </SectionReveal>
       </div>

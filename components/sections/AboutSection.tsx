@@ -1,9 +1,22 @@
-'use client';
-
 import Image from 'next/image';
-import { BookOpen, Eye, Target, CheckCircle, Star, Flame, Quote, Cross, Sparkles } from 'lucide-react';
-import SectionReveal from '@/components/shared/SectionReveal';
+import dynamic from 'next/dynamic';
+import {
+  BookOpen,
+  Eye,
+  Target,
+  CheckCircle,
+  Star,
+  Flame,
+  Quote,
+  Cross,
+  Sparkles,
+} from 'lucide-react';
 import { CHURCH_INFO, CORE_BELIEFS } from '@/lib/church-data';
+
+const SectionReveal = dynamic(
+  () => import('@/components/shared/SectionReveal'),
+  { ssr: false }
+);
 
 const iconMap: Record<string, React.ElementType> = {
   'book-open': BookOpen,

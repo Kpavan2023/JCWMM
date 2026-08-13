@@ -124,15 +124,20 @@ export default function Footer() {
             </h3>
             <div className="space-y-3">
               <a
-                href={`tel:${CHURCH_INFO.contact.phone1}`}
+                href="tel:+919700545494"
                 className="flex items-start gap-3 group"
-                aria-label={`Call ${CHURCH_INFO.contact.phone1}`}
+                aria-label="Call +91 9700545494"
               >
                 <Phone className="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-royal-300 group-hover:text-gold-400 text-sm font-inter transition-colors">{CHURCH_INFO.contact.phone1}</p>
-                  <p className="text-royal-300 group-hover:text-gold-400 text-sm font-inter transition-colors">{CHURCH_INFO.contact.phone2}</p>
-                </div>
+                <p className="text-royal-300 group-hover:text-gold-400 text-sm font-inter transition-colors">+91 9700545494</p>
+              </a>
+              <a
+                href="tel:+918686861836"
+                className="flex items-start gap-3 group"
+                aria-label="Call +91 8686861836"
+              >
+                <Phone className="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0" />
+                <p className="text-royal-300 group-hover:text-gold-400 text-sm font-inter transition-colors">+91 8686861836</p>
               </a>
               <a
                 href={`mailto:${CHURCH_INFO.contact.email}`}

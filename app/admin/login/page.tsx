@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/navigation';
-import { Eye, EyeOff, Lock, Mail, LogIn } from 'lucide-react';
+import { Eye, EyeOff, Lock, Mail, LogIn, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 const supabase = createClient(
@@ -35,7 +36,7 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-royal-950 via-royal-900 to-royal-800 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#050505] flex items-center justify-center px-4">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-gold-500/5 blur-3xl" />
@@ -43,12 +44,22 @@ export default function AdminLoginPage() {
       </div>
 
       <div className="relative w-full max-w-md">
+              {/* Back to Home */}
+      <div className="absolute top-6 left-6 z-20">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-gray-300 hover:text-white transition text-sm font-inter bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
         {/* Card */}
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           {/* Header */}
-          <div className="bg-royal-950 px-8 pt-8 pb-6 text-center">
+          <div className="bg-[#181818] px-8 pt-8 pb-6 text-center border-b border-white/10">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center overflow-hidden border border-white/20">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center overflow-hidden border border-[#0B1F3A]">
                 <Image
                   src="/logo_jcwmm.png"
                   alt="JCWMM Logo"
@@ -64,10 +75,13 @@ export default function AdminLoginPage() {
 
           {/* Form */}
           <div className="px-8 py-8">
-            <h2 className="font-poppins font-semibold text-royal-900 text-lg mb-1">Sign In</h2>
-            <p className="font-inter text-gray-500 text-sm mb-6">
-              Authorized personnel only.
-            </p>
+           <h2 className="font-poppins font-semibold text-white text-lg mb-1">
+  Sign In
+</h2>
+
+<p className="font-inter text-gray-400 text-sm mb-6">
+  Authorized personnel only.
+</p>
 
             <form onSubmit={handleLogin} className="space-y-5" noValidate>
               {/* Email */}
@@ -85,7 +99,7 @@ export default function AdminLoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="pastor@jcwmm.org"
-                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-royal-300 focus:border-transparent bg-gray-50 transition"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-[#0B1F3A] focus:border-[#0B1F3A] bg-gray-50 transition"
                   />
                 </div>
               </div>
@@ -105,7 +119,7 @@ export default function AdminLoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-11 py-3 rounded-xl border border-gray-200 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-royal-300 focus:border-transparent bg-gray-50 transition"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#0B1F3A] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0B1F3A] focus:border-[#0B1F3A] shadow-sm transition"
                   />
                   <button
                     type="button"
@@ -130,7 +144,7 @@ export default function AdminLoginPage() {
               <button
                 type="submit"
                 disabled={loading || !email || !password}
-                className="w-full py-3.5 rounded-xl bg-royal-900 hover:bg-royal-800 text-white font-poppins font-semibold text-sm transition-all hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-[#0B1F3A] hover:bg-[#12315A] text-white font-poppins font-semibold text-sm transition-all hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

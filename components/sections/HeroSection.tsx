@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { Play, Heart, Radio, ChevronDown, Clock } from 'lucide-react';
 
 const SERVICES = [
@@ -55,10 +56,14 @@ export default function HeroSection() {
     >
       {/* ── Background image ── */}
       <div className="absolute inset-0 z-0">
-        {/* The background photo */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/MegaChruch_back.jpeg')" }}
+        <Image
+          src="/MegaChruch_back.jpeg"
+          alt=""
+          fill
+          priority
+          quality={75}
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Layered dark overlay — light enough to keep metallic frame visible */}
         <div
@@ -89,7 +94,7 @@ export default function HeroSection() {
       {/* ── Floating logo glow ring ── */}
       <div
         className={`absolute z-[3] pointer-events-none hero-logo-float transition-opacity duration-700 ${
-          mounted ? 'opacity-[0.18]' : 'opacity-0'
+          mounted ? 'opacity-[0.08]' : 'opacity-0'
         }`}
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         aria-hidden="true"
@@ -99,9 +104,9 @@ export default function HeroSection() {
           style={{
             width: 'clamp(160px, 30vw, 360px)',
             height: 'clamp(160px, 30vw, 360px)',
-            background: 'radial-gradient(circle, rgba(251,191,36,0.09) 30%, transparent 70%)',
-            border: '1px solid rgba(251,191,36,0.18)',
-            boxShadow: '0 0 60px rgba(251,191,36,0.06)',
+            background: 'radial-gradient(circle, rgba(251,191,36,0.04) 30%, transparent 70%)',
+            border: '1px solid rgba(251,191,36,0.08)',
+            boxShadow: '0 0 20px rgba(251,191,36,0.02)',
           }}
         />
       </div>
@@ -163,7 +168,7 @@ export default function HeroSection() {
 
         {/* Welcome to — Inter italic, lighter weight */}
         <p
-          className={`font-inter font-light italic text-white text-white/85 leading-tight mb-3 sm:mb-4 transition-all duration-700 ${
+          className={`font-inter font-light italic text-white leading-tight mb-3 sm:mb-4 transition-all duration-700 ${
             mounted ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{
@@ -189,7 +194,7 @@ export default function HeroSection() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             /* Minimal, elegant glow — no heavy 3D */
-            filter: 'drop-shadow(0 0 18px rgba(251,191,36,0.28))',
+            filter: 'drop-shadow(0 0 8px rgba(251,191,36,0.15))',
           }}
         >
           Mega Church
@@ -216,7 +221,7 @@ export default function HeroSection() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.22))',
+              filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.12))',
               paddingRight: '0.42em', /* compensate for letter-spacing on last char */
             }}
           >
@@ -230,7 +235,7 @@ export default function HeroSection() {
 
         {/* Tagline — Inter Medium, uppercase, soft white */}
         <p
-          className={`mt-7 sm:mt-8 font-inter font-medium text-white text-white/65 uppercase tracking-[0.18em] sm:tracking-[0.24em] text-center transition-all duration-700 ${
+          className={`mt-7 sm:mt-8 font-inter font-medium text-white uppercase tracking-[0.18em] sm:tracking-[0.24em] text-center transition-all duration-700 ${
             mounted ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{
@@ -264,7 +269,7 @@ export default function HeroSection() {
         >
           <button
             onClick={() => scrollTo('#services')}
-            className="hero-btn-primary group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full text-white font-poppins font-semibold w-full sm:w-auto min-w-[172px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+            className="hero-btn-primary group inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-3.5 rounded-full text-white font-poppins font-semibold text-sm w-auto min-w-[150px] sm:w-auto sm:min-w-[172px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             style={{ fontSize: 'clamp(13px, 1.8vw, 15px)' }}
             aria-label="Join Worship service"
           >
@@ -274,7 +279,7 @@ export default function HeroSection() {
 
           <button
             onClick={() => scrollTo('#live')}
-            className="hero-btn-glass group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full text-white font-poppins font-semibold w-full sm:w-auto min-w-[172px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+            className="hero-btn-glass group inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-3.5 rounded-full text-white font-poppins font-semibold text-sm w-auto min-w-[150px] sm:w-auto sm:min-w-[172px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
             style={{ fontSize: 'clamp(13px, 1.8vw, 15px)' }}
             aria-label="Watch Live stream"
           >
@@ -284,7 +289,7 @@ export default function HeroSection() {
 
           <button
             onClick={() => scrollTo('#prayer')}
-            className="hero-btn-gold group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full text-white font-poppins font-semibold w-full sm:w-auto min-w-[172px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+            className="hero-btn-gold group inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-3.5 rounded-full text-white font-poppins font-semibold text-sm w-auto min-w-[150px] sm:w-auto sm:min-w-[172px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             style={{ fontSize: 'clamp(13px, 1.8vw, 15px)' }}
             aria-label="Submit a prayer request"
           >
@@ -302,7 +307,7 @@ export default function HeroSection() {
           aria-label="Ministry statistics"
         >
           {[
-            { value: '100+', label: 'Members' },
+            { value: '500+', label: 'Members' },
             { value: '18+', label: 'Years of Ministry' },
             { value: '2', label: 'Weekly Services' },
           ].map((stat, i, arr) => (
@@ -321,7 +326,7 @@ export default function HeroSection() {
                   {stat.value}
                 </div>
                 <div
-                  className="font-inter text-white text-white/45 uppercase tracking-widest mt-1"
+                  className="font-inter text-white/45 uppercase tracking-widest mt-1"
                   style={{ fontSize: 'clamp(8px, 1.5vw, 11px)' }}
                 >
                   {stat.label}

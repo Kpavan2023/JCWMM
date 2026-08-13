@@ -131,7 +131,7 @@ export default function AdminPrayerRequestsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl overflow-hidden border border-white/20">
-              <Image src="/Logo_Jcwmm.jpeg" alt="JCWMM" width={36} height={36} className="object-cover w-full h-full" />
+              <Image src="/logo_Jcwmm.png" alt="JCWMM" width={36} height={36} className="object-cover w-full h-full" />
             </div>
             <div>
               <div className="font-poppins font-bold text-sm leading-tight">JCWMM Admin</div>
