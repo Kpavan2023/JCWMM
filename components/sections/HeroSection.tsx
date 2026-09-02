@@ -307,7 +307,7 @@ export default function HeroSection() {
           aria-label="Ministry statistics"
         >
           {[
-            { value: '500+', label: 'Members' },
+            { value: '100+', label: 'Members' },
             { value: '18+', label: 'Years of Ministry' },
             { value: '2', label: 'Weekly Services' },
           ].map((stat, i, arr) => (

@@ -55,10 +55,13 @@ export default function ServicesSection() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-8 py-5">
             <div className="flex items-center gap-2 text-gold-400">
               <MapPin className="w-5 h-5" />
-              <span className="font-inter font-medium text-white">{CHURCH_INFO.address.full}</span>
+              <span className="font-inter font-medium text-white">
+                {CHURCH_INFO.address.full}
+              </span>
             </div>
+
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CHURCH_INFO.address.full)}`}
+              href={CHURCH_INFO.location.directions}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-white font-poppins font-semibold text-sm transition-colors duration-200"

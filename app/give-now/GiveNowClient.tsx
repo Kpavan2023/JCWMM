@@ -177,7 +177,7 @@ export default function GiveNowClient() {
                 {/* Offering box image */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                   <Image
-                    src="/images/Offering_Box.jpg"
+                    src="/images/qrrr.jpeg"
                     alt="JCWMM Offering Box"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -209,7 +209,7 @@ export default function GiveNowClient() {
               {/* Left — Abrahamic Covenant poster */}
               <div className="md:col-span-2 relative min-h-[240px] md:min-h-0">
                 <Image
-                  src="/images/BECOME_A_ABRAHAMIC_CONVENANT-C.jpg"
+                  src="/images/offering-2.jpeg "
                   alt="Become an Abrahamic Covenant Partner"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"

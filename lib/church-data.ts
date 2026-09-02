@@ -4,11 +4,11 @@ export const CHURCH_INFO = {
   tagline: 'Sharing God\'s Word • Transforming Lives • Walking in Faith',
   founded: '2010',
   address: {
-    street: 'Hyderabad, Telangana',
+    street: 'JCWMM Church',
     city: 'Hyderabad',
     state: 'Telangana',
     country: 'India',
-    full: 'Hyderabad, Telangana, India',
+    full: 'JCWMM Church, Hyderabad, Telangana, India',
   },
   contact: {
     phone1: '+91 9700545494',
@@ -25,14 +25,13 @@ export const CHURCH_INFO = {
   },
   location: {
   directions:
-    'https://www.google.com/maps/place/Jigyaasa+Studio/@17.4354808,78.4494062,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb90c8f77ded69:0x86409d35be15ce57!8m2!3d17.4354808!4d78.4494062!16s%2Fg%2F1q66_drhh?entry=ttu',
+    'https://www.google.com/maps/place/JCWMM+Church/@17.4353984,78.4490905,21z/data=!4m6!3m5!1s0x3bcb910006dd8d83:0xe60192921bfababe!8m2!3d17.4355138!4d78.4493678!16s%2Fg%2F11zx6s8qld!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D',
 
-  // Replace this with your church's Google Maps Embed URL
   embed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5059680929544!2d78.44940620000001!3d17.435480800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8f77ded69%3A0x86409d35be15ce57!2sJigyaasa%20Studio!5e0!3m2!1sen!2sin!4v1782674356621!5m2!1sen!2sin',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.9067305154583!2d78.44909048103834!3d17.435398357673378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910006dd8d83%3A0xe60192921bfababe!2sJCWMM%20Church!5e0!3m2!1sen!2sin!4v1788181950905!5m2!1sen!2sin',
 
-  latitude: 17.4354808,
-  longitude: 78.4494062,
+  latitude: 17.4355138,
+  longitude: 78.4493678,
 },
   services: [
     {
@@ -252,10 +251,11 @@ export const EVENTS = [
   {
     id: 1,
     title: 'Special Service',
-    date: 'August 15, 2026',
-    time: '10:00 AM – 1:00 PM',
+    date: '',
+    time: '',
     description:
-      'Join us for a powerful Special Service filled with anointed worship, fervent prayer, life-changing preaching of God’s Word, healing, deliverance, and the presence of the Holy Spirit. Everyone is warmly welcome.',
+  'No special services are currently scheduled. We will update this section when a special service is announced.' +
+  'Join us every week for worship, prayer, the preaching of God’s Word, and fellowship in the presence of the Holy Spirit. Everyone is warmly welcome.',
     image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Special',
     featured: true,
@@ -278,26 +278,14 @@ export const GALLERY_IMAGES = [
   {
     id: 3,
     src: '/church_gallery/church-5.JPG',
-    category: 'Worship',
-    caption: 'Praise and Worship',
+    category: 'Youth',
+    caption: 'Prophet sharing Gods Word with the Youth',
   },
     {
     id: 6,
     src: '/church_gallery/church-8.png',
     category: 'Christmas',
     caption: 'Christmas Celebration',
-  },
-  {
-    id: 4,
-    src: '/church_gallery/church-6.JPG',
-    category: 'Baptism',
-    caption: 'Water Baptism Service',
-  },
-  {
-    id: 12,
-    src: '/church_gallery/Church-10.JPG',
-    category: 'Prayer Meetings',
-    caption: 'All-Night Prayer Service',
   },
   {
     id: 5,
@@ -320,14 +308,8 @@ export const GALLERY_IMAGES = [
     caption: 'Community Outreach',
   },
   {
-    id: 9,
-    src: '/church_gallery/church-2.JPG',
-    category: 'Church Anniversary',
-    caption: 'Church Anniversary Celebration',
-  },
-  {
     id: 11,
-    src: '/church_gallery/Church-13.JPG',
+    src: '/church_gallery/church-27.jpeg',
     category: 'Worship',
     caption: 'Evening Worship Night',
   },
@@ -344,12 +326,6 @@ export const GALLERY_IMAGES = [
     caption: 'Evening Worship Night',
   },
    {
-    id: 15,
-    src: '/church_gallery/church-15.jpeg',
-    category: 'Worship',
-    caption: 'Evening Worship Night',
-  },
-   {
     id: 16,
     src: '/church_gallery/church-16.jpeg',
     category: 'Worship',
@@ -361,11 +337,125 @@ export const GALLERY_IMAGES = [
     category: 'Worship',
     caption: 'Evening Worship Night',
   },
-   {
-    id: 18,
-    src: '/church_gallery/church-18.jpeg',
+  {
+    id: 19,
+    src: '/church_gallery/church-19.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Prophetic prayer and family blessing',
+  },
+  {
+    id: 20,
+    src: '/church_gallery/church-20.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Prophetic prayer and family blessing',
+  },
+  {
+    id: 21,
+    src: '/church_gallery/church-21.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Prophetic prayer and family blessing',
+  },
+  {
+    id: 22,
+    src: '/church_gallery/church-22.jpeg',
     category: 'Worship',
     caption: 'Evening Worship Night',
+  },
+  {
+    id: 23,
+    src: '/church_gallery/church-23.jpeg',
+    category: 'Worship',
+    caption: 'Evening Worship Night',
+  },
+  {
+    id: 24,
+    src: '/church_gallery/church-24.jpeg',
+    category: 'Worship',
+    caption: 'Evening Worship Night',
+  },
+  {
+    id: 25,
+    src: '/church_gallery/church-25.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Sunday Prayer Service',
+  },
+  {
+    id: 26,
+    src: '/church_gallery/church-26.jpeg',
+    category: 'Worship',
+    caption: 'Sunday Worship Service',
+  },
+  {
+    id: 28,
+    src: '/church_gallery/church-28.jpeg',
+    category: 'Worship',
+    caption: 'Sunday Worship Service',
+  },
+     {
+    id: 42,
+    src: '/church_gallery/church-42.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'A family coming together for personal prayer with Prophet Judah Asher',
+  },
+    {
+    id: 30,
+    src: '/church_gallery/church-30.jpeg',
+    category: 'Worship',
+    caption: 'Evening Worship Night',
+  },
+    {
+    id: 31,
+    src: '/church_gallery/church-31.jpeg',
+    category: 'Worship',
+    caption: 'Evening Worship Night',
+  },
+    {
+    id: 32,
+    src: '/church_gallery/church-32.jpeg',
+    category: 'Worship',
+    caption: 'Evening Worship Night',
+  },
+    {
+    id: 33,
+    src: '/church_gallery/church-33.jpeg',
+    category: 'Worship',
+    caption: 'Evening Worship Night',
+  },
+    {
+    id: 35,
+    src: '/church_gallery/church-35.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'personally praying for each family and laying hands for healing',
+  }, {
+    id: 36,
+    src: '/church_gallery/church-36.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Receiving prophetic guidance, prayer, and laying on of hands',
+  }, {
+    id: 37,
+    src: '/church_gallery/church-37.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Receiving prophetic guidance, prayer, and laying on of hands',
+  }, {
+    id: 39,
+    src: '/church_gallery/church-39.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Receiving prophetic guidance, prayer, and laying on of hands',
+  }, {
+    id: 40,
+    src: '/church_gallery/church-40.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'Prophet personally praying and ministering to each family',
+  }, {
+    id: 41,
+    src: '/church_gallery/church-43.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'A family coming together for personal prayer with Prophet Judah Asher',
+  }, {
+    id: 46,
+    src: '/church_gallery/church-46.jpeg',
+    category: 'Prayer Meetings',
+    caption: 'personally praying for each family and laying hands for healing',
   },
  
 ];

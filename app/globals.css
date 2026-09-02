@@ -643,24 +643,63 @@ html.dark .shadow-royal-900\/10 {
 .hero-btn-gold:hover {
   box-shadow: 0 8px 32px rgba(217, 119, 6, 0.6), 0 1px 0 rgba(255,255,255,0.15) inset;
 }
-
-/* ── Mobile animation optimization — reduce decorative animations on small screens ── */
+/* ── Mobile optimization: premium but fast ── */
 @media (max-width: 640px) {
+  /* Keep subtle premium animations */
   .animate-float,
-  .animate-float-delay,
-  .hero-logo-float,
-  .hero-dove-float,
-  .animate-shimmer,
-  .badge-shimmer::before,
-  .cross-glow,
-  .animate-pulse-slow,
+  .hero-logo-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero-dove-float {
+    animation: doveFly 10s ease-in-out infinite;
+  }
+
+  /* Keep glow effects, but lighter */
+  .cross-glow {
+    animation: crossGlow 5s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.28));
+  }
+
+  /* Slow decorative effects */
+  .animate-shimmer {
+    animation: shimmer 6s ease-in-out infinite;
+  }
+
+  .badge-shimmer::before {
+    animation: badgeShimmer 8s ease-in-out infinite;
+  }
+
+  /* Disable only the heaviest background animation */
   .ray {
     animation: none !important;
   }
-  .cross-glow {
-    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.2)) !important;
+
+  /* Softer shadows for premium depth */
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(30, 64, 175, 0.14);
   }
-  .animate-spin-slow {
-    animation: none !important;
+
+  /* Slightly stronger typography on mobile */
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
+
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  /*
+   * IMPORTANT:
+   * Do NOT use:
+   *
+   * * {
+   *   transition-duration: 180ms !important;
+   * }
+   *
+   * It makes the entire mobile page animate.
+   */
 }

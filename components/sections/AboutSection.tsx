@@ -162,7 +162,7 @@ export default function AboutSection() {
                 <div className="relative">
                   <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-royal-900/20 bg-white dark-card">
                     <Image
-                      src="/images/Prophet.JPG"
+                      src="/images/Prophet.png"
                       alt="Prophet Judah Asher (Naresh) — JCWMM"
                       fill
                       sizes="(max-width: 768px) 80vw, 40vw"
@@ -250,8 +250,8 @@ export default function AboutSection() {
                 <div className="relative">
                   <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-royal-900/20 bg-gradient-to-br from-royal-50 to-gold-50 dark-card">
                     <Image
-                      src="/images/IMG_6306_(3).PNG"
-                      alt="Prophet Judah Asher & Prophetess — JCWMM Founders"
+                      src="/images/both_pic.png"
+                      alt="Prophet Judah Asher & Prophetess Judah Praisy — JCWMM Founders"
                       fill
                       sizes="(max-width: 768px) 80vw, 40vw"
                       className="object-cover object-top"
@@ -259,7 +259,7 @@ export default function AboutSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-royal-900/70 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="font-poppins font-bold text-xl">Prophet Judah Asher &amp; Prophetess Praisy</h3>
+                      <h3 className="font-poppins font-bold text-xl">Prophet Judah Asher &amp; Prophetess Judah Praisy</h3>
                       <p className="font-inter text-blue-200 text-sm">Founders, JCWMM</p>
                     </div>
                   </div>
@@ -307,7 +307,7 @@ export default function AboutSection() {
                     <div className="mt-8 pt-6 border-t border-gray-100 dark-border flex items-center justify-between">
                       <div>
                         <div className="font-poppins font-bold text-royal-900 dark-heading">With Love,</div>
-                        <div className="font-inter text-gray-500 dark-muted text-sm">Prophet Judah Asher &amp; Prophetess</div>
+                        <div className="font-inter text-gray-500 dark-muted text-sm">Prophet Judah Asher &amp; Prophetess Judah Praisy</div>
                         <div className="font-inter text-royal-500 dark-accent text-xs">Founders, JCWMM</div>
                       </div>
                       <div className="px-5 py-2.5 rounded-xl gold-gradient text-white font-poppins font-semibold text-sm cursor-default">
