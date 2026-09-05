@@ -331,12 +331,6 @@ export const GALLERY_IMAGES = [
     category: 'Worship',
     caption: 'Evening Worship Night',
   },
-   {
-    id: 17,
-    src: '/church_gallery/church-17.jpeg',
-    category: 'Worship',
-    caption: 'Evening Worship Night',
-  },
   {
     id: 19,
     src: '/church_gallery/church-19.jpeg',

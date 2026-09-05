@@ -36,18 +36,18 @@ export const metadata: Metadata = {
     description:
       'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and community fellowship.',
     siteName: 'JCWMM',
-    images: [{ url: '/logo_Jcwmm.png', width: 800, height: 800, alt: 'JCWMM Logo' }],
+    images: [{ url: '/logo_layout.png', width: 800, height: 800, alt: 'JCWMM Logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
     description: 'Official website of JCWMM — Sharing God\'s Word, Transforming Lives, Walking in Faith.',
-    images: ['/logo_Jcwmm.png'],
+    images: ['/logo-layout.png'],
   },
   icons: {
-    icon: '/logo_Jcwmm.png',
-    shortcut: '/logo_Jcwmm.png',
-    apple: '/logo_Jcwmm.png',
+    icon: '/logo-layout.png',
+    shortcut: '/logo-layout.png',
+    apple: '/logo-layout.png',
   },
   other: {
     'application/ld+json': JSON.stringify({

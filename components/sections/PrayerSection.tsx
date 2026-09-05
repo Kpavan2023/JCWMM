@@ -18,122 +18,238 @@ interface FormData {
 }
 
 export default function PrayerSection() {
-  const [form, setForm] = useState<FormData>({ name: '', email: '', phone: '', request: '' });
+  const [form, setForm] = useState<FormData>({
+    name: '',
+    email: '',
+    phone: '',
+    request: '',
+  });
+
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [validationError, setValidationError] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+
+    // Clear validation message when user starts typing
+    if (validationError) {
+      setValidationError('');
+    }
+
+    // Clear database error when user edits the form
+    if (status === 'error') {
+      setStatus('idle');
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.request.trim()) return;
-    setLoading(true);
+
+    setValidationError('');
     setStatus('idle');
 
-    const { error } = await supabase.from('prayer_requests').insert([
-      {
-        name: form.name.trim(),
-        email: form.email.trim() || null,
-        phone: form.phone.trim() || null,
-        request: form.request.trim(),
-      },
-    ]);
+    // Validate required fields
+    if (!form.name.trim() && !form.request.trim()) {
+      setValidationError(
+        'Please enter your full name and prayer request.'
+      );
+      return;
+    }
 
-    setLoading(false);
-    if (error) {
-      setStatus('error');
-    } else {
+    if (!form.name.trim()) {
+      setValidationError('Please enter your full name.');
+      return;
+    }
+
+    if (!form.request.trim()) {
+      setValidationError('Please enter your prayer request.');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.from('prayer_requests').insert([
+        {
+          name: form.name.trim(),
+          email: form.email.trim() || null,
+          phone: form.phone.trim() || null,
+          request: form.request.trim(),
+        },
+      ]);
+
+      if (error) {
+        console.error('Prayer request submission error:', error);
+        setStatus('error');
+        return;
+      }
+
       setStatus('success');
-      setForm({ name: '', email: '', phone: '', request: '' });
+
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        request: '',
+      });
+    } catch (error) {
+      console.error('Unexpected prayer request error:', error);
+      setStatus('error');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <section id="prayer" className="py-24 bg-royal-950 relative overflow-hidden">
+    <section
+      id="prayer"
+      className="py-24 bg-royal-950 relative overflow-hidden"
+    >
       <div className="absolute inset-0 stars-bg opacity-20" />
+
       <div
         className="absolute bottom-0 left-0 right-0 h-64 opacity-20"
-        style={{ background: 'linear-gradient(0deg, rgba(251,191,36,0.3) 0%, transparent 100%)' }}
+        style={{
+          background:
+            'linear-gradient(0deg, rgba(251,191,36,0.3) 0%, transparent 100%)',
+        }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
           {/* Left content */}
           <SectionReveal delay={100}>
             <div className="text-white">
+
               <span className="inline-block px-4 py-1.5 rounded-full bg-gold-900/30 text-gold-400 text-xs font-semibold font-inter uppercase tracking-wider border border-gold-800/40 mb-6">
                 Prayer
               </span>
+
               <h2 className="font-poppins font-bold text-4xl sm:text-5xl mb-6 leading-tight">
                 We Believe in the{' '}
-                <span className="text-gradient-gold">Power of Prayer</span>
+                <span className="text-gradient-gold">
+                  Power of Prayer
+                </span>
               </h2>
+
               <p className="font-inter text-royal-300 text-lg leading-relaxed mb-8">
-                Share your heart with us. Our dedicated prayer team will pray over every request
-                with love, faith, and confidentiality.
+                Share your heart with us. Our dedicated prayer team will pray
+                over every request with love, faith, and confidentiality.
               </p>
+
               <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
                 <Lock className="w-5 h-5 text-gold-400 mt-0.5 flex-shrink-0" />
+
                 <p className="font-inter text-royal-300 text-sm italic">
-                  "Every prayer request is treated with love, care, and confidentiality. Your
-                  personal information will never be shared."
+                  "Every prayer request is treated with love, care, and
+                  confidentiality. Your personal information will never be
+                  shared."
                 </p>
               </div>
 
               <div className="mt-10 space-y-6">
                 {[
-                  { label: 'Submitted Requests', value: '2,500+' },
-                  { label: 'Prayer Warriors', value: '50+' },
-                  { label: 'Testimonies of Answered Prayers', value: '800+' },
+                  {
+                    label: 'Submitted Requests',
+                    value: '2,500+',
+                  },
+                  {
+                    label: 'Prayer Warriors',
+                    value: '50+',
+                  },
+                  {
+                    label: 'Testimonies of Answered Prayers',
+                    value: '800+',
+                  },
                 ].map((stat) => (
-                  <div key={stat.label} className="flex items-center gap-4">
+                  <div
+                    key={stat.label}
+                    className="flex items-center gap-4"
+                  >
                     <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0">
                       <Heart className="w-5 h-5 text-white" />
                     </div>
+
                     <div>
-                      <div className="font-poppins font-bold text-2xl text-gold-400">{stat.value}</div>
-                      <div className="font-inter text-royal-400 text-sm">{stat.label}</div>
+                      <div className="font-poppins font-bold text-2xl text-gold-400">
+                        {stat.value}
+                      </div>
+
+                      <div className="font-inter text-royal-400 text-sm">
+                        {stat.label}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
+
             </div>
           </SectionReveal>
 
           {/* Form */}
           <SectionReveal delay={200}>
             <div className="bg-white rounded-3xl p-8 shadow-2xl">
+
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl blue-gradient flex items-center justify-center">
                   <Heart className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="font-poppins font-bold text-xl text-royal-900">Submit Prayer Request</h3>
+
+                <h3 className="font-poppins font-bold text-xl text-royal-900">
+                  Submit Prayer Request
+                </h3>
               </div>
 
               {status === 'success' ? (
                 <div className="flex flex-col items-center py-12 text-center">
+
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
-                  <h4 className="font-poppins font-bold text-xl text-royal-900 mb-2">Prayer Received!</h4>
+
+                  <h4 className="font-poppins font-bold text-xl text-royal-900 mb-2">
+                    Prayer Received!
+                  </h4>
+
                   <p className="font-inter text-gray-600 mb-6">
-                    Our prayer team will intercede on your behalf. God bless you!
+                    Our prayer team will intercede on your behalf. God bless
+                    you!
                   </p>
+
                   <button
-                    onClick={() => setStatus('idle')}
+                    type="button"
+                    onClick={() => {
+                      setStatus('idle');
+                      setValidationError('');
+                    }}
                     className="px-6 py-2.5 rounded-xl blue-gradient text-white font-poppins font-semibold text-sm"
                   >
                     Submit Another
                   </button>
+
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                >
+
+                  {/* Full Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-inter font-medium text-gray-700 mb-1.5">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-inter font-medium text-gray-700 mb-1.5"
+                    >
                       Full Name <span className="text-red-500">*</span>
                     </label>
+
                     <input
                       id="name"
                       name="name"
@@ -145,10 +261,16 @@ export default function PrayerSection() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-royal-300 focus:border-transparent bg-gray-50 transition"
                     />
                   </div>
+
+                  {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-inter font-medium text-gray-700 mb-1.5">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-inter font-medium text-gray-700 mb-1.5"
+                    >
                       Email Address
                     </label>
+
                     <input
                       id="email"
                       name="email"
@@ -159,10 +281,15 @@ export default function PrayerSection() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-royal-300 focus:border-transparent bg-gray-50 transition"
                     />
                   </div>
+                  {/* Phone */}
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-inter font-medium text-gray-700 mb-1.5">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-inter font-medium text-gray-700 mb-1.5"
+                    >
                       Phone Number
                     </label>
+
                     <input
                       id="phone"
                       name="phone"
@@ -173,10 +300,17 @@ export default function PrayerSection() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-royal-300 focus:border-transparent bg-gray-50 transition"
                     />
                   </div>
+
+                  {/* Prayer Request */}
                   <div>
-                    <label htmlFor="request" className="block text-sm font-inter font-medium text-gray-700 mb-1.5">
-                      Prayer Request <span className="text-red-500">*</span>
+                    <label
+                      htmlFor="request"
+                      className="block text-sm font-inter font-medium text-gray-700 mb-1.5"
+                    >
+                      Prayer Request{' '}
+                      <span className="text-red-500">*</span>
                     </label>
+
                     <textarea
                       id="request"
                       name="request"
@@ -189,13 +323,34 @@ export default function PrayerSection() {
                     />
                   </div>
 
-                  {status === 'error' && (
-                    <div className="flex items-center gap-2 text-red-600 text-sm font-inter">
-                      <AlertCircle className="w-4 h-4" />
-                      Something went wrong. Please try again.
+                  {/* Validation Error */}
+                  {validationError && (
+                    <div
+                      role="alert"
+                      className="flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600 font-inter"
+                    >
+                      <AlertCircle className="w-4 h-4 flex-shrink-0" />
+
+                      <span>{validationError}</span>
                     </div>
                   )}
 
+                  {/* Submission Error */}
+                  {status === 'error' && (
+                    <div
+                      role="alert"
+                      className="flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600 font-inter"
+                    >
+                      <AlertCircle className="w-4 h-4 flex-shrink-0" />
+
+                      <span>
+                        We couldn't submit your prayer request. Please try
+                        again.
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={loading}
@@ -213,10 +368,13 @@ export default function PrayerSection() {
                       </>
                     )}
                   </button>
+
                 </form>
               )}
+
             </div>
           </SectionReveal>
+
         </div>
       </div>
     </section>
