@@ -272,7 +272,7 @@ export default function PrayerSection() {
                     </label>
 
                     <input
-                      id="email"
+                      id="email"  
                       name="email"
                       type="email"
                       value={form.email}
