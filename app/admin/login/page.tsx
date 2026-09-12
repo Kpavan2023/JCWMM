@@ -61,7 +61,7 @@ export default function AdminLoginPage() {
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center overflow-hidden border border-[#0B1F3A]">
                 <Image
-                  src="/logo_jcwmm.png"
+                  src="/images/both_pic.png"
                   alt="JCWMM Logo"
                   width={56}
                   height={56}

@@ -32,7 +32,7 @@ export default function LoadingScreen() {
           <div className="absolute inset-0 rounded-full bg-gold-400/20 animate-ping" />
           <div className="relative w-24 h-24 rounded-full bg-white/10 border-2 border-gold-400/50 flex items-center justify-center overflow-hidden">
             <Image
-              src="/images/IMG_6306_(3).PNG"
+              src="/images/both_pic.png"
               alt="JCWMM Logo"
               width={80}
               height={80}

@@ -66,7 +66,7 @@ export default function LiveStreamSection() {
               </>
             ) : (
               <>
-                Next <span className="text-gradient-gold">Service</span>
+                Next <span className="jcwmm-yellow-heading">Service</span>
               </>
             )}
           </h2>
@@ -100,7 +100,7 @@ export default function LiveStreamSection() {
             <div className="bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-sm">
               <div className="flex items-center justify-center gap-2 text-gold-400 mb-6">
                 <Clock className="w-5 h-5" />
-                <span className="font-inter text-sm font-medium">Next service starts in</span>
+                <span className="jcwmm-yellow-heading font-poppins font-semibold">Next service starts in</span>
               </div>
 
               {/* Countdown */}

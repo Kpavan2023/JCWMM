@@ -151,7 +151,7 @@ export default function AboutSection() {
               Leadership
             </span>
             <h2 className="font-poppins font-bold text-4xl sm:text-5xl text-royal-900 dark-heading mb-4">
-              A Message from <span className="text-gradient-gold">Our Prophet</span>
+              A Message from <span className="jcwmm-yellow-heading">Our Prophet</span>
             </h2>
           </SectionReveal>
 
@@ -239,7 +239,7 @@ export default function AboutSection() {
               Our Family
             </span>
             <h2 className="font-poppins font-bold text-4xl sm:text-5xl text-royal-900 dark-heading mb-4">
-              A Word from <span className="text-gradient-gold">Our Prophet & Prophetess</span>
+              A Word from <span className="jcwmm-yellow-heading">Our Prophet & Prophetess</span>
             </h2>
           </SectionReveal>
 

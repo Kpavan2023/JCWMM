@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-gold-400/50">
-                <Image src="/logo_jcwmm.png" alt="JCWMM Logo" fill sizes="56px" className="object-cover" />
+                <Image src="/images/both_pic.png" alt="JCWMM Logo" fill sizes="56px" className="object-cover" />
               </div>
               <div>
                 <span className="font-poppins font-bold text-xl text-white block">JCWMM</span>

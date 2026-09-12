@@ -52,7 +52,7 @@ export default function BibleVerseSection() {
           </div>
         </div>
 
-        <span className="inline-block text-gold-400 text-xs font-semibold font-inter uppercase tracking-widest mb-8">
+        <span className="inline-block jcwmm-yellow-heading text-xs font-semibold font-inter uppercase tracking-widest mb-8">
           Bible Verse of the Day
         </span>
 
@@ -63,7 +63,7 @@ export default function BibleVerseSection() {
           <blockquote className="font-poppins text-white text-2xl sm:text-3xl lg:text-4xl font-medium leading-relaxed mb-8 italic">
             {verse.verse}
           </blockquote>
-          <cite className="font-inter text-gold-400 text-xl font-semibold not-italic">
+          <cite className="font-inter jcwmm-yellow-heading text-xl font-semibold not-italic">
             — {verse.reference}
           </cite>
         </div>

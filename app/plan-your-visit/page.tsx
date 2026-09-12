@@ -14,7 +14,7 @@ import { CHURCH_INFO } from '@/lib/church-data';
 import PlanVisitAccordion from '@/components/plan-visit/PlanVisitAccordion';
 
 const MAPS_URL =
-  'https://www.google.com/maps/place/Jigyaasa+Studio/@17.4355065,78.4493851,20.11z/data=!4m6!3m5!1s0x3bcb90c8f77ded69:0x86409d35be15ce57!8m2!3d17.4354808!4d78.4494062!16s%2Fg%2F1q66_drhh?entry=ttu';
+  'https://www.google.com/maps/place/JCWMM+Church/@17.4353984,78.4490905,21z/data=!4m6!3m5!1s0x3bcb910006dd8d83:0xe60192921bfababe!8m2!3d17.4355138!4d78.4493678!16s%2Fg%2F11zx6s8qld!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D';
 
 export const metadata: Metadata = {
   title: 'Plan Your Visit | Jesus Christ Word Miracles Ministry (JCWMM)',
@@ -237,7 +237,7 @@ export default function PlanYourVisitPage() {
               <div className="flex items-center gap-2 text-white">
                 <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-gold-400" />
-                  <span className="text-white font-medium hover:text-gold-300 transition-colors">Jigyasa Studio, Banjara Hills, Hyderabad</span>
+                  <span className="text-white font-medium hover:text-gold-300 transition-colors">JCWMM Church, Ameerpet, Hyderabad</span>
                 </a>
               </div>
             </div>

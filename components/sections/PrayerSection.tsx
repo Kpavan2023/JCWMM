@@ -117,7 +117,7 @@ export default function PrayerSection() {
         className="absolute bottom-0 left-0 right-0 h-64 opacity-20"
         style={{
           background:
-            'linear-gradient(0deg, rgba(251,191,36,0.3) 0%, transparent 100%)',
+            'linear-gradient(0deg, rgba(210, 197, 79, 0.77) 0%, transparent 100%)',
         }}
       />
 
@@ -128,13 +128,13 @@ export default function PrayerSection() {
           <SectionReveal delay={100}>
             <div className="text-white">
 
-              <span className="inline-block px-4 py-1.5 rounded-full bg-gold-900/30 text-gold-400 text-xs font-semibold font-inter uppercase tracking-wider border border-gold-800/40 mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full jcwmm-yellow-heading text-xs font-semibold font-inter uppercase tracking-wider border border-gold-800/40 mb-6">
                 Prayer
               </span>
 
               <h2 className="font-poppins font-bold text-4xl sm:text-5xl mb-6 leading-tight">
                 We Believe in the{' '}
-                <span className="text-gradient-gold">
+                <span className="jcwmm-yellow-heading">
                   Power of Prayer
                 </span>
               </h2>

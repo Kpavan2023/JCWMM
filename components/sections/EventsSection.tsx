@@ -16,7 +16,7 @@ What's Happening </span>
       </h2>
 
       <p className="font-inter text-gray-600 text-lg max-w-2xl mx-auto">
-        Don't miss out on what God is doing through our church community.
+        Don't miss out on what God is doing through our church.
       </p>
     </SectionReveal>
 

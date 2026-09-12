@@ -60,7 +60,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="JCWMM Home">
           <div className="relative w-11 h-11 rounded-full overflow-hidden ring-2 ring-gold-400/60 shadow-md">
             <Image
-              src="/logo_jcwmm.png"
+              src="/images/both_pic.png"
               alt="JCWMM Logo"
               fill
               sizes="44px"

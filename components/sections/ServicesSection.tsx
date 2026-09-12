@@ -11,11 +11,11 @@ export default function ServicesSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionReveal className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-gold-900/30 text-gold-400 text-xs font-semibold font-inter uppercase tracking-wider border border-gold-800/50 mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full jcwmm-yellow-heading text-xs font-semibold font-inter uppercase tracking-wider border border-gold-800/50 mb-4">
             Join Us
           </span>
           <h2 className="font-poppins font-bold text-4xl sm:text-5xl text-white mb-4">
-            Weekly <span className="text-gradient-gold">Services</span>
+            Weekly <span className="jcwmm-yellow-heading">Services</span>
           </h2>
           <p className="font-inter text-royal-300 text-lg max-w-2xl mx-auto">
             Come and experience the presence of God with us. Everyone is welcome.
